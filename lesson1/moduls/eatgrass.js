@@ -1,3 +1,20 @@
+/*var LiveForm = require("./LiveForm");
+var arrays = require("./arrays.js");*/
+
+
+
+/*function random(items){
+  let item = item(Math.floor(Math.random()*item))
+  return item;
+}*/
+/*module.exports = class Eatergrass extends LiveForm{
+  constructor(x,y){
+    super(x,y)
+  }
+} 
+//move 
+*/
+
 class Eatergrass {
   constructor(x, y) {
     this.x = x;

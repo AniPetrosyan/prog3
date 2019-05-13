@@ -1,3 +1,12 @@
+/*module.exports = class Grass extends LiveFrom{
+  constructor(x,y,ind){
+    super(x,y,index);
+  }
+}
+//mul
+*/
+
+
 class Grass {
   constructor(x, y) {
     this.x = x;

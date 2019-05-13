@@ -1,9 +1,12 @@
 let side = 120;
+var socket = io();
+/* hin 
 let grassArr = [];
 let eaterArr = [];
 let gishatichArr = [];
 let kerpar1Arr = [];
-let kerpar2Arr = [];
+let kerpar2Arr = [];*/
+
 
 let matrix = [
   [5, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 5],
@@ -28,6 +31,40 @@ function setup() {
   createCanvas(matrix[0].length * side, matrix.length * side);
   background('#acacac');
 
+/* socket.io("inch vor anun", drawCreatures); */
+
+ /* function drawCreatures(matrix){
+  for (let y = 0; y < matrix.length; y++) {
+    for (let x = 0; x < matrix[y].length; x++) {
+ 
+
+      if (matrix[y][x] == 1) {
+        fill("green");
+        rect(x * side, y * side, side, side);
+      }
+      else if (matrix[y][x] == 0) {
+        fill("#acacac");
+        rect(x * side, y * side, side, side);
+      }
+
+      else if (matrix[y][x] == 2) {
+        fill("yellow");
+        rect(x * side, y * side, side, side);
+      }
+      else if (matrix[y][x] == 3) {
+        fill("red");
+        rect(x * side, y * side, side, side);
+      }
+      else if (matrix[y][x] == 4) {
+        fill("blue");
+        rect(x * side, y * side, side, side);
+      }
+      else if (matrix[y][x] == 5) {
+        fill("purple");
+        rect(x * side, y * side, side, side);
+      }
+    }
+}*/
 
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {
@@ -113,6 +150,9 @@ function draw() {
     kerpar2Arr[i].eat();
   }
 }
+
+
+
 
 
 
