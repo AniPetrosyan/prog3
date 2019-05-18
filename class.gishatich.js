@@ -75,9 +75,9 @@ class Gishatich {
         this.energy += 2;
   
   
-        for (let i in eaterArr) {
-          if (x == eaterArr[i].x && y == eaterArr[i].y) {
-            eaterArr.splice(i, 1);
+        for (let i in grassEaterArr) {
+          if (x == grassEaterArr[i].x && y == grassEaterArr[i].y) {
+            grassEaterArr.splice(i, 1);
           }
         }
   
