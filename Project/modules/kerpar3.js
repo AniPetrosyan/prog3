@@ -1,38 +1,42 @@
 var LiveForm = require("./LiveForm");
 var random = require("./random");
 
-module.exports = class Kerpar2 extends LiveForm {
+module.exports = class Kerpar3 extends LiveForm {
     constructor(x, y) {
         super(x, y);
         this.life = 50;
     }
-    newDirections() {
+    getNewCoordinates() {
         this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
             [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
+            [this.x, this.y + 2],
+            [this.x, this.y + 3],
+            [this.x, this.y + 4],
+            [this.x, this.y + 5],
+            [this.x, this.y + 6],
+            [this.x, this.y + 7],
+            [this.x, this.y + 8],
+            [this.x, this.y + 9],
+            [this.x, this.y + 10],
+      
+      
+            [this.x, this.y - 1],
+            [this.x, this.y - 2],
+            [this.x, this.y - 3],
+            [this.x, this.y - 4],
+            [this.x, this.y - 5],
+            [this.x, this.y - 6],
+            [this.x, this.y - 7],
+            [this.x, this.y - 8],
+            [this.x, this.y - 9],
+            [this.x, this.y - 10],
         ];
     }
 
-getDirections(i1, i2) {
-    this.newDirections();
-    var found = [];
-    for (var m in this.directions) {
-        var x = this.directions[i][0];
-        var y = this.directions[i][1];
-        if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-            if (matrix[y][x] == i1 || matrix[y][x] == i2 ) {
-                found.push(this.directions[m]);
-            }
-        }
-    }
-    return found;
-}
+    chooseCell(character) {
+        this.getNewCoordinates();
+        return super.chooseCell(character);
+    } 
 
     mul() {
         let emptyCells = this.chooseCell(0);

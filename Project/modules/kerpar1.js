@@ -6,7 +6,7 @@ module.exports = class Kerpar1 extends LiveForm {
         super(x, y);
         this.life = 30;
     }
-    getnewDirections() {
+    getNewCoordinates() {
         this.directions = [
           [this.x - 1, this.y - 1],
           [this.x + 1, this.y + 1],

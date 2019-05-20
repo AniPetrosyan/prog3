@@ -1,22 +1,12 @@
-/*var express = require('express');
-var app = express();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
-var fs = require('fs');
-
-app.use(express.static("."));
-app.get('/', function (req, res) {
-    res.redirect('index.html');
-});
-server.listen(3000, function () {
-    console.log("port is runninng")
-
-}); */
+var Grass = require("./modules/Grass.js");
+var GrassEater = require("./modules/GrassEater.js");
+var Gishatich  = require("./modules/gishatich.js");
+var Kerpar1 = require("./modules/kerpar1.js");
+var Kerpar2  = require("./modules/kerpar2.js");
+var Kerpar3  = require("./modules/kerpar3.js");
 
 
 
-
-//! Setting global arrays  --  START
 grassArr = [];
 grassEaterArr = [];
 gishatichArr = [];
@@ -24,10 +14,11 @@ kerpar1Arr = [];
 kerpar2Arr = [];
 kerpar3Arr = [];
 matrix = [];
-//! Setting global arrays  -- END
+grassHashiv = 0;
 
 
-//! Creating MATRIX -- START
+
+
 let random = require('./modules/random');
 function matrixGenerator(matrixSize, grass, grassEater, gishatichArr, kerpar1Arr, kerpar2Arr, kerpar3Arr) {
     for (let i = 0; i < matrixSize; i++) {
@@ -64,23 +55,15 @@ function matrixGenerator(matrixSize, grass, grassEater, gishatichArr, kerpar1Arr
     for (let i = 0; i < kerpar3Arr; i++) {
         let customX = Math.floor(random(matrixSize));
         let customY = Math.floor(random(matrixSize));
-        matrix[customY][customX] = 5;
+        matrix[customY][customX] = 6;
     }
 }
-matrixGenerator(10, 5, 1, 2, 1, 1, 1);
+matrixGenerator(20, 5, 5, 5, 5, 5, 5);
 //! Creating MATRIX -- END
 
 
 
-//! Requiring modules  --  START
-var Grass = require("./modules/Grass.js");
-var GrassEater = require("./modules/GrassEater.js");
-var Gishatich  = require("./modules/gishatich.js");
-var Kerpar1 = require("./modules/kerpar1.js");
-var Kerpar2  = require("./modules/kerpar2.js");
-var Kerpar3  = require("./modules/kerpar3.js");
 
-//! Requiring modules  --  END
 
 
 
@@ -123,6 +106,7 @@ function creatingObjects() {
             } else if (matrix[y][x] == 1) {
                 var grass = new Grass(x, y);
                 grassArr.push(grass);
+                grassHashiv++;
             }
         }
     }
@@ -164,7 +148,8 @@ if (kerpar3Arr[0] !== undefined) {
 }
     //! Object to send
     let sendData = {
-        matrix: matrix
+        matrix: matrix,
+        grassCounter: grassHashiv
     }
     
     //! Send data over the socket to clients who listens "data"
