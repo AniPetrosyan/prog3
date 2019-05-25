@@ -5,8 +5,11 @@
         crossorigin="anonymous">
     <script src="p5.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="script.js"></script>
+  
     <style>
+        #winter{
+            float: right;
+        }
         canvas {
             display: block;
             margin: 0 auto;
@@ -33,6 +36,7 @@
 </head>
 
 <body>
+              
     <table class="table table-hover">
         <thead>
             <tr>
@@ -86,12 +90,15 @@
                 <td id="kerpar3Count"></td>
             </tr>
             <ul>
-                <li id="fire">
-                    <button onclick="Fire()">Fire</button>
-                </li>
+             
             </ul>
         </tbody>
     </table>
+    <button id = "summer">Summer</button>
+    <button id = "winter">Winter</button>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>

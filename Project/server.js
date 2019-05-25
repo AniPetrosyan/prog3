@@ -152,6 +152,7 @@ io.on('connection', function (socket) {
     socket.on("fire", burn);
 });
 
+
 function game() {
     if (grassArr[0] !== undefined) {
         for (var i in grassArr) {
@@ -252,4 +253,7 @@ function game() {
     io.sockets.emit("data", sendData);
 }
 
-setInterval(game, 1000)
+
+
+setInterval(game, 1000);
+

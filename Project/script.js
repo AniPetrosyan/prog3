@@ -1,10 +1,12 @@
-//! Setup function fires automatically
+weather = "summer";
+let grasscolor = "green";
+
 function setup() {
     frameRate(30);
 
     var side = 30;
     var matrix = [];
-
+    var xotiguyn = "green"
     /* var seasons = "winter";
      var weather = "winter";*/
     //! Getting DOM objects (HTML elements)
@@ -15,8 +17,10 @@ function setup() {
     let kerpar1CountElement = document.getElementById('kerpar1Count');
     let kerpar2CountElement = document.getElementById('kerpar2Count');
     let kerpar3CountElement = document.getElementById('kerpar3Count');
+    let sumbutton= document.getElementById('summer');
+    let winbutton = document.getElementById('winter');
 
-
+    
     //! adding socket listener on "data" <-- name, after that fire 'drawCreatures' function 
     socket.on("data", drawCreatures);
 
@@ -35,21 +39,35 @@ function setup() {
         //! Every time it creates new Canvas woth new matrix size
         createCanvas(matrix[0].length * side, matrix.length * side)
         //! clearing background by setting it to new grey color
-        background('#acacac');
+        
         //! Draw grassCount and grassEaterCount to HTML (use DOM objects to update information, yes, and use .innerText <- function)
+        background('#acacac');
+        
+        sumbutton.onclick = function(){
+        weather = "summer";
 
+            grasscolor = "green";
+           
+        }    
+
+        winbutton.onclick = function(){
+        weather = "winter";
+
+            grasscolor = 'white';
+           
+        }  
         //! Drawing and coloring RECTs
         for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == 1) {
-                    fill("green");
+                    fill(grasscolor);
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 2) {
                     fill("orange");
                     rect(j * side, i * side, side, side);
                 }
                 else if (matrix[i][j] == 0) {
-                    fill("gray");
+                    fill("grey");
                     rect(j * side, i * side, side, side);
                 }/*else if (matrix[i][j] == 0 && seasons == "spring") {
                     fill('#92f70e');
@@ -87,12 +105,8 @@ function setup() {
     //console.log(seasons);
 }
 
-socket.on("send data", drawCreatures)
-function Fire() {
-    socket.emit("fire")
-}
+//socket.on("send data", drawCreatures)
 
-
-
-
-
+// function Fire() {
+//     socket.emit("fire");
+// }
