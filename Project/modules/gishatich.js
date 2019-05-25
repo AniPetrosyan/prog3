@@ -18,62 +18,63 @@ module.exports = class Gishatich extends LiveForm {
             [this.x, this.y + 1],
             [this.x + 1, this.y + 1]
         ];
-}
-
-chooseCell(character) {
-    this.getNewCoordinates();
-    return super.chooseCell(character);
-} 
-   
-mul() {
-    let emptyCells = this.chooseCell(0);
-    let newCell = random(emptyCells);
-
-    if (newCell) {
-        let x = newCell[0];
-        let y = newCell[1];
-        matrix[y][x] = 3;
-
-        let norGishatich = new Gishatich(x, y);
-        gishatichArr.push(norGishatich);
-  
-        this.multiply = 0;
-        this.life = 5;
     }
-}
 
-eat() {
-    let emptyCells = this.chooseCell(2);
-    let newCell = random(emptyCells);
+    chooseCell(character) {
+        this.getNewCoordinates();
+        return super.chooseCell(character);
+    }
 
-    if (newCell) {
+    mul() {
+        let emptyCells = this.chooseCell(0);
+        let newCell = random(emptyCells);
 
-        this.life++;
-        let x = newCell[0];
-        let y = newCell[1];
+        if (newCell) {
+            gishatichHashiv++;
+            let x = newCell[0];
+            let y = newCell[1];
+            matrix[y][x] = 3;
 
-        matrix[y][x] = 3;
-        matrix[this.y][this.x] = 0;
+            let norGishatich = new Gishatich(x, y);
+            gishatichArr.push(norGishatich);
 
-        for (let i in grassEaterArr) {
-            if (grassEaterArr[i].x == x && grassEaterArr[i].y == y) {
-                grassEaterArr.splice(i, 1)
+            this.multiply = 0;
+            this.life = 5;
+        }
+    }
+
+    eat() {
+        let emptyCells = this.chooseCell(2);
+        let newCell = random(emptyCells);
+
+        if (newCell) {
+
+            this.life++;
+            let x = newCell[0];
+            let y = newCell[1];
+
+            matrix[y][x] = 3;
+            matrix[this.y][this.x] = 0;
+
+            for (let i in grassEaterArr) {
+                if (grassEaterArr[i].x == x && grassEaterArr[i].y == y) {
+                    grassEaterArr.splice(i, 1)
+                }
+            }
+            this.x = x;
+            this.y = y;
+
+            if (this.life >= 13) {
+                this.mul();
             }
         }
-        this.x = x;
-        this.y = y;
-
-        if (this.life >= 13) {
-            this.mul();
+        else {
+            this.move();
+            this.energy -= 2;
+            if (this.energy == 0) {
+                this.die();
+            }
         }
-    }
-    else {
-        this.move();
-        this.energy -= 2;
-        if (this.energy == 0) {
-          this.die();
-        }
-      }
     }
 
     move() {
@@ -109,9 +110,8 @@ eat() {
 
 
 
-  
- 
-    
-  
-    
-  
+
+
+
+
+
