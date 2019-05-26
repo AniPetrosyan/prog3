@@ -1,14 +1,15 @@
 weather = "summer";
-let grasscolor = "green";
+let grasscolor = "#6ac433";
+let grassEatercolor = "orange";
+let gishatichcolor = "red";
+let kerpar2color = "yellow";
+let kerpar3color = "#306768";
 
 function setup() {
     frameRate(30);
 
     var side = 30;
     var matrix = [];
-    var xotiguyn = "green"
-    /* var seasons = "winter";
-     var weather = "winter";*/
     //! Getting DOM objects (HTML elements)
     var socket = io();
     let grassCountElement = document.getElementById('grassCount');
@@ -45,15 +46,20 @@ function setup() {
         
         sumbutton.onclick = function(){
         weather = "summer";
-
-            grasscolor = "green";
-           
+            grasscolor = "#6ac433";
+            grassEatercolor = "orange";
+            gishatichcolor = "red";
+            kerpar2color = "yellow";
+            kerpar3color = "#306768";
         }    
 
         winbutton.onclick = function(){
         weather = "winter";
-
-            grasscolor = 'white';
+           grasscolor = 'white';
+            grassEatercolor = "#e0e2e5";
+            gishatichcolor = "#0b61ea";
+            kerpar2color = "#e1e6ef";
+            kerpar3color = "#94aace";
            
         }  
         //! Drawing and coloring RECTs
@@ -63,40 +69,25 @@ function setup() {
                     fill(grasscolor);
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 2) {
-                    fill("orange");
+                    fill( grassEatercolor);
                     rect(j * side, i * side, side, side);
                 }
                 else if (matrix[i][j] == 0) {
-                    fill("grey");
-                    rect(j * side, i * side, side, side);
-                }/*else if (matrix[i][j] == 0 && seasons == "spring") {
-                    fill('#92f70e');
+                    fill("#acacac");
                     rect(j * side, i * side, side, side);
                 }
-                else if (matrix[i][j] == 0 && seasons == "summer") {
-                    fill('#f9f972');
-                    rect(j * side, i * side, side, side);
-                } 
-                else if (matrix[i][j] == 0 && seasons == "autumn") {
-                    fill('#960c0c');
-                    rect(j * side, i * side, side, side);
-                } 
-                else if (matrix[i][j] == 0 && seasons == "winter") {
-                    fill('white');
-                    rect(j * side, i * side, side, side);
-                } */
                 else if (matrix[i][j] == 3) {
-                    fill('red');
+                    fill(gishatichcolor);
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 4) {
                     fill('blue');
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 5) {
-                    fill('yellow');
+                    fill(kerpar2color);
                     rect(j * side, i * side, side, side);
                 }
                 else if (matrix[i][j] == 6) {
-                    fill('purple');
+                    fill(kerpar3color);
                     rect(j * side, i * side, side, side);
                 }
             }

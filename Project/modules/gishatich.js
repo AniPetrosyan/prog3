@@ -64,7 +64,7 @@ module.exports = class Gishatich extends LiveForm {
             this.x = x;
             this.y = y;
 
-            if (this.life >= 13) {
+            if (this.life >= 15) {
                 this.mul();
             }
         }

@@ -93,7 +93,7 @@ module.exports = class Kerpar2 extends LiveForm {
       }
 
 
-      if (this.life >= 16) {
+      if (this.life >= 17) {
         this.mul();
       }
     }
