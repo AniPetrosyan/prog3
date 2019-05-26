@@ -14,7 +14,6 @@ gishatichArr = [];
 kerpar1Arr = [];
 kerpar2Arr = [];
 kerpar3Arr = [];
-//fireArr: [],
 matrix = [];
 grassHashiv = 0;
 grassEaterHashiv = 0;
@@ -24,16 +23,14 @@ kerpar2Hashiv = 0;
 kerpar3Hashiv = 0;
 
 
-/*seasons = ["winter", "spring", "summer", "autumn"];
-weather = "winter";*/
+
 var Grass = require("./modules/Grass.js");
 var GrassEater = require("./modules/GrassEater.js");
 var Gishatich = require("./modules/gishatich.js");
 var Kerpar1 = require("./modules/kerpar1.js");
 var Kerpar2 = require("./modules/kerpar2.js");
 var Kerpar3 = require("./modules/kerpar3.js");
-var Fire = require("./modules/fire.js");
-//seasons = ["spring", "summer", "autumn", "winter"];
+
 
 
 
@@ -76,22 +73,8 @@ function matrixGenerator(matrixSize, grass, grassEater, gishatichArr, kerpar1Arr
         matrix[customY][customX] = 6;
     }
 }
-//matrixGenerator(60, 60, 40, 40, 60, 40, 40);
+
 matrixGenerator(20, 8, 8, 8, 8, 8, 8);
-
-
-//! Creating MATRIX -- END
-
-
-
-
-
-
-
-//! SERVER STUFF  --  START
-
-//! SERVER STUFF END  --  END
-
 
 
 function creatingObjects() {
@@ -187,54 +170,6 @@ function game() {
         io.sockets.emit("send matrix", matrix);
 
     }
-
-
-    /*function fire() {
-        grassArr = [];
-        grassEaterArr = [];
-        gishatichArr = [];
-        kerpar1Arr = [];
-        kerpar2Arr = [];
-        kerpar3Arr = [];
-        for (var y = 0; y < matrix.length; y++) {
-            for (var x = 0; x < matrix[0].length; x++) {
-                matrix[x][y] = 0;
-            }
-        }
-    }*/
-
-
-
-    /*function cold() {
-        seasons = "winter";
-        weather();
-    }*/
-
-    /*seasons = "winter"
-    
-    io.on('connection', function (socket) {
-        io.sockets.emit("send matrix", matrix);
-        socket.on("fire", burn);
-        //socket.on("start", cold);
-       
-    });
-    
-    function season() {
-        if (seasons == "winter") {
-            weather = "winter"
-        }
-        else if (seasons == "spring") {
-            seasons = "spring"
-        }
-        else if (seasons == "summer") {
-            seasons = "summer"
-        }
-        else if (seasons == "autumn") {
-            seasons = "autumn"
-        }
-        io.sockets.emit('season', seasons)
-    }
-    setInterval(season, 1000);*/
 
 
     //! Object to send

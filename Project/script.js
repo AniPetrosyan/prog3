@@ -18,18 +18,16 @@ function setup() {
     let kerpar1CountElement = document.getElementById('kerpar1Count');
     let kerpar2CountElement = document.getElementById('kerpar2Count');
     let kerpar3CountElement = document.getElementById('kerpar3Count');
-    let sumbutton= document.getElementById('summer');
+    let sumbutton = document.getElementById('summer');
     let winbutton = document.getElementById('winter');
 
-    
+
     //! adding socket listener on "data" <-- name, after that fire 'drawCreatures' function 
     socket.on("data", drawCreatures);
 
     function drawCreatures(data) {
         //! after getting data pass it to matrix variable
         matrix = data.matrix;
-        /* weather = obj.s
-         console.log(weather)*/
 
         grassCountElement.innerText = data.grassCounter;
         grassEaterCountElement.innerText = data.grassEaterCounter;
@@ -40,28 +38,28 @@ function setup() {
         //! Every time it creates new Canvas woth new matrix size
         createCanvas(matrix[0].length * side, matrix.length * side)
         //! clearing background by setting it to new grey color
-        
+
         //! Draw grassCount and grassEaterCount to HTML (use DOM objects to update information, yes, and use .innerText <- function)
         background('#acacac');
-        
-        sumbutton.onclick = function(){
-        weather = "summer";
+
+        sumbutton.onclick = function () {
+            weather = "summer";
             grasscolor = "#6ac433";
             grassEatercolor = "orange";
             gishatichcolor = "red";
             kerpar2color = "yellow";
             kerpar3color = "#306768";
-        }    
+        }
 
-        winbutton.onclick = function(){
-        weather = "winter";
-           grasscolor = 'white';
+        winbutton.onclick = function () {
+            weather = "winter";
+            grasscolor = 'white';
             grassEatercolor = "#e0e2e5";
             gishatichcolor = "#0b61ea";
             kerpar2color = "#e1e6ef";
             kerpar3color = "#94aace";
-           
-        }  
+
+        }
         //! Drawing and coloring RECTs
         for (var i = 0; i < matrix.length; i++) {
             for (var j = 0; j < matrix[i].length; j++) {
@@ -69,7 +67,7 @@ function setup() {
                     fill(grasscolor);
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 2) {
-                    fill( grassEatercolor);
+                    fill(grassEatercolor);
                     rect(j * side, i * side, side, side);
                 }
                 else if (matrix[i][j] == 0) {
@@ -93,11 +91,7 @@ function setup() {
             }
         }
     }
-    //console.log(seasons);
+
 }
 
-//socket.on("send data", drawCreatures)
 
-// function Fire() {
-//     socket.emit("fire");
-// }

@@ -4,7 +4,7 @@ var random = require("./random");
 module.exports = class Kerpar3 extends LiveForm {
   constructor(x, y) {
     super(x, y);
-    this.life = 50;
+    this.life = 40;
   }
   getNewCoordinates() {
     this.directions = [
@@ -135,8 +135,6 @@ module.exports = class Kerpar3 extends LiveForm {
 
   move() {
     let fundCords1 = this.chooseCell(0);
-    //let fundCords2 = this.chooseCell(1);
-    // let fundCords = fundCords1.concat(fundCords2);
     let cord = random(fundCords1);
 
     if (cord) {

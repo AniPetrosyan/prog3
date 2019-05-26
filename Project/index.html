@@ -1,15 +1,17 @@
 <html>
+
 <head>
     <meta charset="utf8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <script src="p5.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-  
+
     <style>
-        #winter{
+        #winter {
             float: right;
         }
+
         canvas {
             display: block;
             margin: 0 auto;
@@ -36,7 +38,7 @@
 </head>
 
 <body>
-              
+
     <table class="table table-hover">
         <thead>
             <tr>
@@ -62,27 +64,31 @@
             <tr>
                 <th scope="row">2</th>
                 <td scope="row" style="background-color:orange;"></td>
-                <td>Նարնջագույնը խոտակերն է, որը բազմանում է, երբ էներգիան 13֊ից ավել է և մահանում է,երբ էներգիան հասնում է 0-ի, կամ
+                <td>Նարնջագույնը խոտակերն է, որը բազմանում է, երբ էներգիան 13֊ից ավել է և մահանում է,երբ էներգիան
+                    հասնում է 0-ի, կամ
                     երբ նրան ուտում է գիշատիչը կամ կերպար 1-ը</td>
                 <td id="grassEaterCount"></td>
             </tr>
             <tr>
                 <th scope="row">3</th>
                 <td scope="row" style="background-color:red;"></td>
-                <td>Կարմիրը գիշատիչն է, որը բազմանում է, երբ էներգիան 15֊ից ավել է և մահանում է,երբ էներգիան հասնում է 0-ի, կամ
-                    երբ նրան ուտում է  կերպար 1-ը կամ կերպար 2-ը</td>
+                <td>Կարմիրը գիշատիչն է, որը բազմանում է, երբ էներգիան 15֊ից ավել է և մահանում է,երբ էներգիան հասնում է
+                    0-ի, կամ
+                    երբ նրան ուտում է կերպար 1-ը կամ կերպար 2-ը</td>
                 <td id="gishatichCount"></td>
             </tr>
             <tr>
                 <th scope="row">4</th>
                 <td scope="row" style="background-color:blue;"></td>
-                <td>Կապույտը կերպար 1-ն է, որը բազմանում է, երբ էներգիան 16֊ից ավել է և  մահանում է,երբ էներգիան հասնում է 0-ի, կամ երբ նրան ուտում է  կերպար 2-ը կամ կերպար 3-ը</td>
+                <td>Կապույտը կերպար 1-ն է, որը բազմանում է, երբ էներգիան 16֊ից ավել է և մահանում է,երբ էներգիան հասնում
+                    է 0-ի, կամ երբ նրան ուտում է կերպար 2-ը կամ կերպար 3-ը</td>
                 <td id="kerpar1Count"></td>
             </tr>
             <tr>
                 <th scope="row">5</th>
                 <td scope="row" style="background-color:yellow;"></td>
-                <td>Դեղինը կերպար 2-ն է, որը բազմանում է, երբ էներգիան 17֊ից ավել է և  մահանում է,երբ էներգիան հասնում է 0-ի, կամ երբ նրան ուտում է  կերպար 3-ը</td>
+                <td>Դեղինը կերպար 2-ն է, որը բազմանում է, երբ էներգիան 17֊ից ավել է և մահանում է,երբ էներգիան հասնում է
+                    0-ի, կամ երբ նրան ուտում է կերպար 3-ը</td>
                 <td id="kerpar2Count"></td>
             </tr>
             <tr>
@@ -92,12 +98,12 @@
                 <td id="kerpar3Count"></td>
             </tr>
             <ul>
-             
+
             </ul>
         </tbody>
     </table>
-    <button id = "summer">Summer</button>
-    <button id = "winter">Winter</button>
+    <button id="summer">Summer</button>
+    <button id="winter">Winter</button>
 
     <script src="script.js"></script>
 

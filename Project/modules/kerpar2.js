@@ -114,8 +114,8 @@ module.exports = class Kerpar2 extends LiveForm {
   move() {
     let fundCords1 = this.chooseCell(0);
     let fundCords2 = this.chooseCell(1);
-    // let fundCords = fundCords1.concat(fundCords2);
-    let cord = random(fundCords1);
+    let fundCords = fundCords1.concat(fundCords2);
+    let cord = random(fundCords);
 
     if (cord) {
       let x = cord[0];
