@@ -2,6 +2,7 @@ weather = "summer";
 let grasscolor = "#6ac433";
 let grassEatercolor = "orange";
 let gishatichcolor = "red";
+let kerpar1color = "blue";
 let kerpar2color = "yellow";
 let kerpar3color = "#306768";
 
@@ -47,6 +48,7 @@ function setup() {
             grasscolor = "#6ac433";
             grassEatercolor = "orange";
             gishatichcolor = "red";
+            kerpar1color = "blue";
             kerpar2color = "yellow";
             kerpar3color = "#306768";
         }
@@ -56,6 +58,7 @@ function setup() {
             grasscolor = 'white';
             grassEatercolor = "#e0e2e5";
             gishatichcolor = "#0b61ea";
+            kerpar1color = "#0a3d91";
             kerpar2color = "#e1e6ef";
             kerpar3color = "#94aace";
 
@@ -78,7 +81,7 @@ function setup() {
                     fill(gishatichcolor);
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 4) {
-                    fill('blue');
+                    fill(kerpar1color);
                     rect(j * side, i * side, side, side);
                 } else if (matrix[i][j] == 5) {
                     fill(kerpar2color);
